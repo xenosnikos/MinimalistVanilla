@@ -96,11 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
             $(".tdnn").toggleClass('day');
             
             if ($("body").hasClass('dark-mode')) {
-                sidebarLogo.src = 'WhiteSquere.png';
-                fixedLogo.src = 'WhiteSquere.png';
+                sidebarLogo.src = 'Assets/WhiteSquere.png';
+                fixedLogo.src = 'Assets/WhiteSquere.png';
             } else {
-                sidebarLogo.src = 'ICON BLACK AND WHITE.png';
-                fixedLogo.src = 'ICON BLACK AND WHITE.png';
+                sidebarLogo.src = 'Assets/ICON BLACK AND WHITE.png';
+                fixedLogo.src = 'Assets/ICON BLACK AND WHITE.png';
             }
         });
     });
