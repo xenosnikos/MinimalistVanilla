@@ -81,7 +81,7 @@ body.dark-mode #enter-site {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     overflow: hidden;
-    width: 100%;
+    width: auto;
     flex-grow: 1;
 }
 
@@ -229,7 +229,7 @@ body.dark-mode .components .nav-item a:hover {
 }
 
 .content-section {
-    height: 100vh; /* Full viewport height */
+    height: 75vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
