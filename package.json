@@ -9,12 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "svelte": "^4.2.7",
-    "vite": "^6.3.5"
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "svelte": "^4.2.19",
+    "vite": "^5.4.10"
   },
   "dependencies": {
-    "svelte-i18n": "^3.5.0",
+    "svelte-i18n": "^3.7.4",
     "svelte-sidebar-menu": "^0.9.12"
   }
 }
