@@ -79,10 +79,11 @@ body.dark-mode #enter-site {
     display: flex;
     height: 100vh;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out, margin-left 0.3s ease-in-out;
     overflow: hidden;
-    width: auto;
-    flex-grow: 1;
+    width: calc(100% - 200px);
+    margin-left: 200px;
+    position: relative;
 }
 
 #sidebar {
@@ -96,7 +97,7 @@ body.dark-mode #enter-site {
     border: 2px solid #000000;
     padding: 20px;
     box-shadow: 0 0 10px #000000;
-    transition: width 0.3s, background-color 0.3s, color 0.3s;
+    transition: width 0.3s ease-in-out, background-color 0.3s, color 0.3s;
     position: fixed;
     left: 0;
     top: 0;
@@ -218,25 +219,28 @@ body.dark-mode .components .nav-item a:hover {
 
 #content {
     padding: 0;
-    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
-    flex-grow: 1;
-    width: calc(100% - 200px); /* Default width when sidebar is expanded */
-    overflow-y: auto; /* Allow vertical scrolling */
-    scroll-snap-type: y mandatory; /* Snap to sections */
+    width: 100%;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    position: relative;
 }
-#sidebar.collapsed + #main-content #content {
-    width: calc(100% - 60px); /* Adjust width for collapsed state */
+#sidebar.collapsed + #main-content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
 }
 
 .content-section {
-    height: 75vh; 
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: left;
     padding: 20px;
-    scroll-snap-align: start; /* Snap each section */
+    scroll-snap-align: start;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
 #sidebar.collapsed .nav-text {
@@ -480,4 +484,212 @@ form button:hover {
 
 form {
     width: 100%;
+}
+.onbutton-hover {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#logo:hover .onbutton-hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ********** Language Toggle ************ */
+
+.language-toggle {
+    position: absolute;
+    top: 20px; /* Adjust the position as needed */
+    right: 20px;
+    z-index: 1000;
+}
+
+#language-toggle-button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid #000000;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#language-toggle-button:hover {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode #language-toggle-button {
+    background-color: #1e1e1e;
+    color: white;
+    border-color: white;
+}
+
+/* ********** Responsive Design ************ */
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 992px) {
+    #main-content {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+    }
+    
+    #sidebar {
+        width: 60px;
+    }
+    
+    .nav-text {
+        display: none;
+    }
+    
+    #sidebar-logo {
+        width: 40px;
+    }
+    
+    .cards {
+        flex-wrap: wrap;
+    }
+    
+    .card {
+        flex: 0 0 calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+    
+    .home-left, .home-right {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .content-section {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+    }
+    
+    #home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .contact-left, .contact-right {
+        max-width: 100%;
+    }
+    
+    #content {
+        scroll-snap-type: none;
+    }
+}
+
+/* Small screens (mobile) */
+@media screen and (max-width: 768px) {
+    #main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .toggle-container {
+        --toggleHeight: 3em;
+        --toggleWidth: 3em;
+        --toggleBtnRadius: 1.5em;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .language-toggle {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .card {
+        flex: 0 0 100%;
+    }
+    
+    .terminal {
+        width: 90%;
+        max-width: none;
+        padding: 15px;
+    }
+    
+    #logo img {
+        max-width: 200px;
+    }
+    
+    #home-image {
+        max-width: 80%;
+        margin: 0 auto 20px;
+    }
+    
+    form input, form textarea {
+        padding: 8px;
+        font-size: 16px; /* Prevent zoom on mobile */
+    }
+    
+    form button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+    }
+    
+    #enter-site {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    #chevron {
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+/* Additional mobile styles for sidebar toggle */
+@media screen and (max-width: 768px) {
+    #sidebar {
+        transform: translateX(-100%);
+        z-index: 1001;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    #sidebar.active {
+        transform: translateX(0);
+    }
+    
+    #sidebar-toggle {
+        right: auto;
+        left: 10px;
+        top: 10px;
+        border: 2px solid #000000;
+        border-radius: 4px;
+        background-color: white;
+        color: black;
+        z-index: 1002;
+        display: block;
+        position: fixed;
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 1;
+    }
+    
+    body.dark-mode #sidebar-toggle {
+        background-color: #1e1e1e;
+        color: white;
+        border-color: white;
+    }
+    
+    #sidebar.active #chevron {
+        transform: rotate(180deg);
+    }
 }
