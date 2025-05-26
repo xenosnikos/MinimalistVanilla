@@ -1,5 +1,6 @@
 import App from './App.svelte';
 import { init, register } from 'svelte-i18n';
+import '../styles.css';
 
 // Register translations
 register('en', () => import('./locales/en.json'));

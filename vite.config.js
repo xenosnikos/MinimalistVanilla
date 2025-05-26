@@ -5,5 +5,11 @@ export default defineConfig({
   plugins: [svelte()],
   server: {
     port: 3000
-  }
+  },
+  build: {
+    rollupOptions: {
+      input: 'index.html'
+    }
+  },
+  publicDir: 'Assets'
 }); 
