@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
 	import { sidebarOpen, sidebarIsInert, sidebarStayOpen } from '../stores.js';
 	import { onMount } from 'svelte';
-	export let breakPoint: number = 1024;
-	let width: number;
+	export let breakPoint = 1024;
+	let width;
 	$: if (width >= breakPoint) {
 		console.log(`Viewport width ${width} >= ${breakPoint}, enabling sidebar`);
 		sidebarStayOpen.update((n) => (n = true));

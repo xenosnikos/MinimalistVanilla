@@ -1,129 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algoseed Labs</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    
-    <link rel="icon" href="/assets/ICON BLACK AND WHITE-b6b404fa.png" type="image/png">
-  <script type="module" crossorigin src="/assets/index-81d3c3d6.js"></script>
-  <link rel="stylesheet" href="/assets/index-485cce40.css">
+  <script type="module" crossorigin src="/assets/index-a82ac1f8.js"></script>
+  <link rel="stylesheet" href="/assets/index-e99623c4.css">
 </head>
-
 <body>
-    <div class="terminal">
-        <pre id="terminal-content"></pre>
-    </div>
-    <div id="logo" class="hidden">
-        <img src="/assets/without background-5073fc60.png" alt="Algoseed Labs Logo">
-        <button id="enter-site" class="btn btn-dark hidden">Enter Site</button>
-        <span class="onbutton-hover">We don't use cookies <i class="fas fa-cookie"></i></span>
-    </div>
-
-    <div id="main-content" class="hidden">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <img src="/assets/ICON BLACK AND WHITE-b6b404fa.png" alt="Algoseed Labs Logo" id="sidebar-logo">
-            </div>
-
-            <button id="sidebar-toggle" class="btn btn-light">
-                <span id="chevron">&#x276E;</span>
-            </button>
-            <ul class="components">
-                <li class="nav-item animated-item"><a href="#home"><i class="fas fa-home"></i><span class="nav-text" id="nav-home">Home</span></a></li>
-                <li class="nav-item animated-item"><a href="#about"><i class="fas fa-question-circle"></i><span class="nav-text" id="nav-about">About</span></a></li>
-                <li class="nav-item animated-item"><a href="#services"><i class="fas fa-clipboard-list"></i><span class="nav-text" id="nav-services">Services</span></a></li>
-                <li class="nav-item animated-item"><a href="#contact"><i class="fas fa-briefcase"></i><span class="nav-text" id="nav-portfolio">Portfolio</span></a></li>
-                <li class="nav-item animated-item"><a href="#casestudies"><i class="fas fa-search"></i><span class="nav-text" id="nav-casestudies">Case Studies</span></a></li>
-                <li class="nav-item animated-item"><a href="#blog"><i class="fas fa-edit"></i><span class="nav-text" id="nav-blog">Blog</span></a></li>
-                <li class="nav-item animated-item"><a href="#contact"><i class="fas fa-envelope"></i><span class="nav-text" id="nav-contact">Contact</span></a></li>
-                <li class="sidebar-header nav-text"><span class="nav-text"> &#x00A9;2025</span></li>
-            </ul>
-        </nav>
-        <div id="content" class="container">
-            <!-- Home Section -->
-            <section id="home" class="content-section animated-item">
-                <div class="home-left">
-                    <h2 id="home-title">Welcome to Algoseed Labs</h2>
-                    <p id="home-description">Leading the way in innovative solutions and groundbreaking technology. Discover our services and see how we can help you achieve your goals.</p>
-                    <button class="cta" id="get-started-button">Get Started</button>
-                </div>
-                <div class="home-right">
-                    <img src="/assets/without background-5073fc60.png" alt="Innovative Solutions" id="home-image">
-                </div>
-            </section>
-
-            <!-- Services Section -->
-            <section id="services" class="content-section animated-item">
-                <h2 id="services-title">Our Services</h2>
-                <h3 id="services-subtitle">What We Offer</h3>
-                <div class="cards">
-                    <div class="card">
-                        <h3 id="service1-title">Service 1</h3>
-                        <p id="service1-description">Description of service 1...</p>
-                    </div>
-                    <div class="card">
-                        <h3 id="service2-title">Service 2</h3>
-                        <p id="service2-description">Description of service 2...</p>
-                    </div>
-                    <div class="card">
-                        <h3 id="service3-title">Service 3</h3>
-                        <p id="service3-description">Description of service 3...</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="content-section animated-item">
-                <div class="contact-left">
-                    <h2 id="contact-title">Contact Us</h2>
-                    <p id="contact-description">We'd love to hear from you. Whether you have a question about our services or want to discuss a project, our team is ready to assist you.</p>
-                </div>
-                <div class="contact-right">
-                    <form>
-                        <div class="form-group">
-                            <label for="name" id="name-label">Name:</label>
-                            <input type="text" id="name" name="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" id="email-label">Email:</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" id="message-label">Message:</label>
-                            <textarea id="message" name="message"></textarea>
-                        </div>
-                        <button type="submit" id="send-message-button">Send Message</button>
-                    </form>
-                </div>
-            </section>
-            <!-- Other sections here -->
-        </div>
-    </div>
-    <!-- toggle-container outside sidebar -->
-    <div class="toggle-container">
-        <div class="tdnn">
-            <div class="moon"></div>
-        </div>
-    </div>
-
-    <!-- Language toggle button -->
-    <div class="language-toggle">
-        <button id="language-toggle-button">FR</button>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     
-    <script>
-        document.addEventListener('mousemove', function (e) {
-            const homeImage = document.getElementById('home-image');
-            const x = (window.innerWidth - e.pageX) / 50;
-            const y = (window.innerHeight - e.pageY) / 50;
-            homeImage.style.transform = `translate(${x}px, ${y}px)`;
-        });
-    </script>
 </body>
-
 </html>
